@@ -11,10 +11,8 @@ const Stack = createNativeStackNavigator();
 return (
   <NavigationContainer>
     <Stack.Navigator>
-      <Stack.Screen name="Home"
-      component={HomeScreen} />
-      <Stack.Screen name="Details"
-      component={DetailsScreen} />      
+      <Stack.Screen name="Home" component={HomeScreen} options={{ title: '🍔 Outdoor recipes 🍪', headerTitleAlign: 'center' }} />
+      <Stack.Screen name="Details" component={DetailsScreen} options={{ title: 'Detalhes da Receita', headerTitleAlign: 'center' }} />      
     </Stack.Navigator>
   </NavigationContainer>
 );

@@ -4,15 +4,12 @@ import recipes from '../data/recipes';
 import * as Animatable from 'react-native-animatable';
 import RecipeCard from '../components/RecipeCard';
 
-export default function HomeScreen({navigation}) {
+export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView 
         contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}
       >
-        <Animatable.Text animation="fadeInDown" style={styles.titulo}>
-         🥪 Outdoor recipes 🍪
-        </Animatable.Text>
 
         <Animatable.Text animation="fadeIn" delay={300} style={styles.text}>
           Receitas deliciosas para você fazer ao <Text style={styles.text_enfase}>ar livre</Text>, confira abaixo
@@ -32,7 +29,6 @@ export default function HomeScreen({navigation}) {
                 {...recipe}
               />
             </Animatable.View>
-
             ) 
           )
         }

@@ -1,9 +1,21 @@
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
-export default function RecipeCard({navigation, nome, descricao, tempo_total, ingredientes, passo_a_passo, image}) {
+export default function RecipeCard({ nome, descricao, tempo_total, ingredientes, passo_a_passo, image}) {
+  const navigation = useNavigation();
+
   return (
-    <TouchableOpacity style={styles.recipe_container} onPress={() => navigation.navigate("Details")}>
+    <TouchableOpacity style={styles.recipe_container} 
+      onPress={() => navigation.navigate("Details", {
+        nome,
+        descricao,
+        tempo_total,
+        ingredientes,
+        passo_a_passo,
+        image
+      })}
+    >
       <Image
         source={image}
         style={{ width: 70, height: 70, borderRadius: 12 }}
